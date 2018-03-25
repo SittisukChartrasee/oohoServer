@@ -4,6 +4,6 @@
     </head>
 
     <body>
-        <h1>Server</h1>
+        <h1>Server OHO</h1>
     </body>
 </html>
