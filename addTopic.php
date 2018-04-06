@@ -12,7 +12,6 @@ $share = '400';
 $data = array(
         'title' => $_POST["a"],
         'content' => $_POST["b"],
-        'style' => $_POST["style"],
         'postDate' => $postDate,
         'postStatus' => $postStatus,
         'startTravel' => $startTravel,
@@ -23,6 +22,6 @@ $data = array(
     );
 $result = $client->call('addTopic', $data);
 
-$a['alert'] = $result;
+$a['aa'] = $result;
 echo json_encode($a);
 ?>

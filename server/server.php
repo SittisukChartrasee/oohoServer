@@ -19,7 +19,6 @@
     function addTopic(
         $title,
         $content,
-        $style,
         $postDate,
         $postStatus,
         $startTravel,
@@ -31,11 +30,13 @@
         $conn = connection();
         $data = [];
         $text = 'error something in back-end';
-        $sql = "INSERT INTO topic (title, content, style, saveDate, postStatus, startTravel, travelDay, whoWith, viewCount, shareCount) 
-                VALUES ('$title', '$content', '$style', '$postDate', '$postStatus', '$startTravel', '$dayCount', '$whoWith', $view, $share)";
+        $sql = "INSERT INTO topic (title, content, saveDate, postStatus, startTravel, travelDay, whoWith, viewCount, shareCount) 
+                VALUES ('$title', '$content', '$postDate', '$postStatus', '$startTravel', '$dayCount', '$whoWith', $view, $share)";
         $result = $conn->query($sql);
         if ($result) {
             $text = 'add data full success!';
+        } else {
+            $text = mysqli_error($con);
         }
         return $text;
     }
